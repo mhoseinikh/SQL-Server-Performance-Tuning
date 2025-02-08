@@ -1,4 +1,6 @@
-
+DBCC DROPCLEANBUFFERS;
+DBCC FREEPROCCACHE;
+GO
 DROP TABLE IF EXISTS [Dembiz_DW].dbo.tmpidArea;
 CREATE TABLE [Dembiz_DW].[dbo].[tmpidArea](
 	[TType] [INT] NOT NULL,
@@ -99,6 +101,5 @@ FROM
               )
     ORDER BY Dos2.idDossier DESC
 ) Dos2
-WHERE Dos2.idDossier IS NOT NULL;
-
-
+WHERE Dos2.idDossier IS NOT NULL
+ORDER BY 1,2,3;
