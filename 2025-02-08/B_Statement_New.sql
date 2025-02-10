@@ -50,7 +50,7 @@ SELECT 8 AS TType,ISNULL(D.Dossier1, D.idDossier) AS idDossier,MAX(D.AreaTypeID)
 	GROUP BY ISNULL(D.Dossier1, D.idDossier)
 
 
-INSERT INTO [Dembiz_DW].dbo._DossierCopyofOrginalDossier_tmp
+--INSERT INTO [Dembiz_DW].dbo._DossierCopyofOrginalDossier_tmp
 SELECT t.idDossier AS tidDossier,
        t.idArea AS tidArea,
        Dos2.idDossier,
