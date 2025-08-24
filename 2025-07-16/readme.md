@@ -1,19 +1,19 @@
-# <Case Title – Optimizing Reporting View RPT.vOrderSum for Performance>
+# Optimizing Reporting View RPT.vOrderSum for Performance
 
 ## 1) Context
-- SQL Server Version/Edition: #SQL Server 2019 Enterprise
-- Workload Type: #OLTP
-- Objects:  #Table / Query / View / UDF
-- Approx. Data Size: #1 GB
+- SQL Server Version/Edition: SQL Server 2019 Enterprise
+- Workload Type: OLTP
+- Objects:  Table / Query / View / UDF
+- Approx. Data Size: 1 GB
 
 ---
 
-## 2) Problem (Baseline)
+## 2) Problem
 - Symptom: long duration, excessive logical reads
-- Baseline snapshot (captured with STATISTICS IO/TIME, Query Store, or Profiler):
-  - Duration: 
-  - CPU: <ms>
-  - Logical Reads: <n>
+- Baseline snapshot
+  - Duration: <299405ms>
+  - CPU: <197376ms>
+  - Logical Reads: <2142556>
   - Spills/TempDB: <n / none>
 - Example (Before Plan):
 ![Before Plan](./images/before.png)
