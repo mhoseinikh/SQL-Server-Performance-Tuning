@@ -36,6 +36,9 @@ Describe the analysis process, e.g.:
 **Step 3 – Statistics Update**
 ![Step 3](./images/step3_stats.png)
 
+### Combined Results (Execution Time)
+This screenshot shows both **before** and **after** execution times in a single view.
+![Combined Execution Time](./images/combined_execution.png)
 ---
 
 ## 4) Change Applied
@@ -54,6 +57,11 @@ Describe the analysis process, e.g.:
 | Before | After |
 |:------:|:-----:|
 | ![Before](./images/before.png) | ![After](./images/after.png) |
+
+| Combined Screenshot |
+|:-------------------:|
+| ![Combined](./images/combined_execution.png) |
+*Note: This screenshot contains both Before and After execution times.*
 
 ### Data Evidence (optional)
 Query runtime distribution before tuning:
@@ -77,3 +85,4 @@ Query runtime distribution after tuning:
 ---
 
 > ⚠️ **Important:** Always test changes on **non-production** environments before applying to live systems.
+
