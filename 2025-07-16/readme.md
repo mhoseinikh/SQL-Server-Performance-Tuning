@@ -11,10 +11,10 @@
 ## 2) Problem
 - Symptom: long duration, excessive logical reads
 - Baseline snapshot
-  - Duration: <299405ms>
-  - CPU: <197376ms>
-  - Logical Reads: <2142556>
-  - Spills/TempDB: <n / none>
+  - Duration: 299405ms
+  - CPU: 197376ms
+  - Logical Reads: 2142556
+
 - Example (Before Plan):
 ![Before Plan](./images/RPT.vOrderSum_OLD1.jpg)
 ![Before Plan](./images/RPT.vOrderSum_OLD2.jpg)
