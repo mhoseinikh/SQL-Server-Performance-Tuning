@@ -26,11 +26,20 @@ This view was very large and heavy, so I started analyzing the query structure.
 After my review, I found that part of the query used a subquery which returned around 1,000,000 rows, and for some columns of these rows it was calling UDFs (User Defined Functions).
 I began to optimize and rewrite the query structure by removing all extra columns that were not needed in the final output, and I also removed or reduced the usage of UDFs as much as possible.
 
-### Combined Results (Execution Time)
+### Combined Results
 This screenshot shows both **before** and **after** execution times in a single view.
+## Combined Results 1
 ![Combined Execution Time](./images/RPT.vOrderSum.jpg)
+## Combined Results 2
 ![Combined Execution Time](./images/RPT.vOrderSum_2.jpg)
 
+### Performance Comparison
+| Metric        | Before       | After   | Improvement |
+|---------------|-------------:|--------:|------------:|
+| Duration      | 299,405 ms   | 6,192 ms | 97.9% ↓ |
+| CPU           | 197,376 ms   | 2,969 ms | 98.5% ↓ |
+| Logical Reads | 2,142,556    | 12,306   | 99.4% ↓ |
+این
 ---
 
 ## 4) Change Applied
