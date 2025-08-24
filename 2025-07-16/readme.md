@@ -22,69 +22,35 @@
 ---
 
 ## 3) Investigation
-Describe the analysis process, e.g.:
-- Plan highlights: <scans, key lookups, missing indexes, parameter sniffing>
-- DMV/Wait Stats evidence
-- Root cause identified: <reason here>
-
-### Step-by-Step Screenshots (if applicable)
-**Step 1 – Original Plan**
-![Step 1](./images/step1_plan.png)
-
-**Step 2 – Index Analysis**
-![Step 2](./images/step2_index.png)
-
-**Step 3 – Statistics Update**
-![Step 3](./images/step3_stats.png)
+This view was very large and heavy, so I started analyzing the query structure.
+After my review, I found that part of the query used a subquery which returned around 1,000,000 rows, and for some columns of these rows it was calling UDFs (User Defined Functions).
+I began to optimize and rewrite the query structure by removing all extra columns that were not needed in the final output, and I also removed or reduced the usage of UDFs as much as possible.
 
 ### Combined Results (Execution Time)
 This screenshot shows both **before** and **after** execution times in a single view.
-![Combined Execution Time](./images/combined_execution.png)
+![Combined Execution Time](./images/RPT.vOrderSum.jpg)
+![Combined Execution Time](./images/RPT.vOrderSum_2.jpg)
 
 ---
 
 ## 4) Change Applied
-- Action taken: <created index, updated statistics, query rewrite, OPTION(RECOMPILE), etc.>
-- Reasoning: <why this change was selected, expected impact>
+- Query rewriting
+- Removing unused columns
+- Eliminating or reducing the frequency of UDF usage
 
 ---
 
 ## 5) Results (After)
-- Duration: <ms>
-- CPU: <ms>
-- Logical Reads: <n>
-- Spills/TempDB: <n / none>
-
-### Before vs After Comparison
-| Before | After |
-|:------:|:-----:|
-| ![Before](./images/before.png) | ![After](./images/after.png) |
-
-| Combined Screenshot |
-|:-------------------:|
-| ![Combined](./images/combined_execution.png) |
-*Note: This screenshot contains both Before and After execution times.*
-
-
-### Data Evidence (optional)
-Query runtime distribution before tuning:
-![Before Data](./images/data_distribution.png)
-
-Query runtime distribution after tuning:
-![After Data](./images/data_distribution_after.png)
-
----
+- Duration: 6192ms
+- CPU: 2969ms
+- Logical Reads: 12306
 
 ## 6) Scripts Used
-- `./scripts/<file>.sql`
-- Or reference to `/scripts/common/` if shared helpers were used
+Since the script belongs to the employer, I am not able to share the original query.
 
 ---
 
 ## 7) Risks & Rollback
-- Risks: <index bloat, plan regression, query store capture, etc.>
-- Rollback: <drop index, revert stats, remove hint, restore previous plan>
+- Risks: For each subquery or UDF review, the output before and after optimization had to remain exactly the same.
+It was also important to make sure that the results did not change in any other scenarios.
 
----
-
-> ⚠️ **Important:** Always test changes on **non-production** environments before applying to live systems.
