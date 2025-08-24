@@ -1,10 +1,10 @@
 # <Case Title – Optimizing Reporting View RPT.vOrderSum for Performance>
 
 ## 1) Context
-- SQL Server Version/Edition: SQL Server 2019 Enterprise
-- Workload Type: OLTP
-- Objects:  Table / Query / View / UDF
-- Approx. Data Size: 1 GB
+- SQL Server Version/Edition: #SQL Server 2019 Enterprise
+- Workload Type: #OLTP
+- Objects:  #Table / Query / View / UDF
+- Approx. Data Size: #1 GB
 
 ---
 
