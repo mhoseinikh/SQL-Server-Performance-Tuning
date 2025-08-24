@@ -26,28 +26,33 @@ Describe the analysis process, e.g.:
 - DMV/Wait Stats evidence
 - Root cause identified: <reason here>
 
-### Step-by-Step Screenshots (if applicable)
-**Step 1 – Original Plan**
-![Step 1](./images/step1_plan.png)
-
-**Step 2 – Index Analysis**
-![Step 2](./images/step2_index.png)
-
-**Step 3 – Statistics Update**
-![Step 3](./images/step3_stats.png)
-
-### Combined Results (Execution Time)
-This screenshot shows both **before** and **after** execution times in a single view.
-![Combined Execution Time](./images/combined_execution.png)
 ---
 
-## 4) Change Applied
+## 4) Combined Results
+This screenshot shows both **before** and **after** execution times in a single view.
+### Combined Results 1
+![Combined Execution Time](./images/RPT.vOrderSum.jpg)
+### Combined Results 2
+![Combined Execution Time](./images/RPT.vOrderSum_2.jpg)
+
+---
+
+## 5) Performance Comparison
+| Metric        | Before       | After   | Improvement |
+|---------------|-------------:|--------:|------------:|
+| Duration      | 299,405 ms   | 6,192 ms | 97.9% ↓ |
+| CPU           | 197,376 ms   | 2,969 ms | 98.5% ↓ |
+| Logical Reads | 2,142,556    | 12,306   | 99.4% ↓ |
+
+---
+
+## 6) Change Applied
 - Action taken: <created index, updated statistics, query rewrite, OPTION(RECOMPILE), etc.>
 - Reasoning: <why this change was selected, expected impact>
 
 ---
 
-## 5) Results (After)
+## 7) Results
 - Duration: <ms>
 - CPU: <ms>
 - Logical Reads: <n>
@@ -72,17 +77,18 @@ Query runtime distribution after tuning:
 
 ---
 
-## 6) Scripts Used
+## 8) Scripts Used
 - `./scripts/<file>.sql`
 - Or reference to `/scripts/common/` if shared helpers were used
 
 ---
 
-## 7) Risks & Rollback
+## 9) Risks & Rollback
 - Risks: <index bloat, plan regression, query store capture, etc.>
 - Rollback: <drop index, revert stats, remove hint, restore previous plan>
 
 ---
 
 > ⚠️ **Important:** Always test changes on **non-production** environments before applying to live systems.
+
 
