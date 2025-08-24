@@ -10,5 +10,14 @@ Each folder is a **case study** with:
 
 ---
 
-## Repository Structure
+## 📂 Case Studies Overview
+
+Here are some highlights from performance tuning cases:
+
+### Case 01 – Optimizing Reporting View RPT.vOrderSum
+| Before | After |
+|:------:|:-----:|
+| ![Before](./2025-07-16/images/RPT.vOrderSum_OLD1.jpg) | ![After](./2025-07-16/images/RPT.vOrderSum.jpg) |
+
+👉 [Read full case study](./2025-07-16/README.md)
 
