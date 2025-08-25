@@ -17,7 +17,7 @@ Here are some highlights from performance tuning cases:
 ### Case 01 – Optimizing Reporting View RPT.vOrderSum
 | Before / After |
 |:------:|
-| ![After](./2025-07-16/images/RPT.vOrderSum.jpg) |
+| ![After](./Case-Studies/2025-07-16/images/RPT.vOrderSum.jpg) |
 
-👉 [Read full case study](./2025-07-16/README.md)
+👉 [Read full case study](./Case-Studies/2025-07-16/readme.md)
 
