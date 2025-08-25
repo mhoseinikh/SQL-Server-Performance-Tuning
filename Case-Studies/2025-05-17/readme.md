@@ -117,7 +117,7 @@ FROM (
 **Original vs Phase 1 vs Phase 2**
 
 | Original View (Before) & Phase 1 & Phase 2 |
-|:----------------------:|:---------------:|
+|:-----------------------------------:|
 | ![Original View & Phase 1 & Phase 2](./images/SELECT-FROM-dbo.vHistoryTemp-1.png) |
 
 ---
@@ -126,7 +126,7 @@ FROM (
 **Original vs Phase 1 vs Phase 2**
 
 | Original View (Before) & Phase 1 & Phase 2 |
-|:----------------------:|:---------------:|
+|:----------------------------------:|
 | ![Original View & Phase 1 & Phase 2](./images/SELECT-FROM-dbo.vHistoryTemp-2.png) |
 | ![Original View & Phase 1 & Phase 2](./images/SELECT-FROM-dbo.vHistoryTemp-2.png) |
 
