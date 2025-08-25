@@ -28,16 +28,7 @@ I began to optimize and rewrite the query structure by removing all extra column
 
 ---
 
-## 4) Combined Results
-This screenshot shows both **before** and **after** execution times in a single view.
-### Combined Results 1
-![Combined Execution Time](./images/RPT.vOrderSum.jpg)
-### Combined Results 2
-![Combined Execution Time](./images/RPT.vOrderSum_2.jpg)
-
----
-
-## 5) Performance Comparison
+## 4) Performance Comparison
 | Metric        | Before       | After   | Improvement |
 |---------------|-------------:|--------:|------------:|
 | Duration      | 299,405 ms   | 6,192 ms | 97.9% ↓ |
@@ -46,26 +37,37 @@ This screenshot shows both **before** and **after** execution times in a single 
 
 ---
 
-## 6) Change Applied
+## 5) Change Applied
 - Query rewriting
 - Removing unused columns
 - Eliminating or reducing the frequency of UDF usage
 
 ---
 
-## 7) Results
+## 6) Results
 - Duration: 6192ms
 - CPU: 2969ms
 - Logical Reads: 12306
 
 ---
 
-## 8) Scripts Used
+## 7) Scripts Used
 Since the script belongs to the employer, I am not able to share the original query.
 
 ---
 
-## 9) Risks & Rollback
+## 8) Risks & Rollback
 - Risks: For each subquery or UDF review, the output before and after optimization had to remain exactly the same.
 It was also important to make sure that the results did not change in any other scenarios.
+
+---
+
+## 9) Combined Results
+This screenshot shows both **before** and **after** execution times in a single view.
+### Combined Results 1
+![Combined Execution Time](./images/RPT.vOrderSum.jpg)
+### Combined Results 2
+![Combined Execution Time](./images/RPT.vOrderSum_2.jpg)
+
+
 
