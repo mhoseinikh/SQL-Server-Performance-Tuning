@@ -72,12 +72,11 @@ Two separate optimization phases were performed:
 ## 5) Results
 
 ### Performance Comparison
-
-| Version                | Duration (ms) | CPU (ms) | Logical Reads | Improvement vs Baseline |
-|-------------------------|--------------:|---------:|--------------:|------------------------:|
-| Original View           | 382,786       | 326,704  | 85,883,989    | – |
-| First Optimization      | 29,332        | 29,265   | 16,213,155    | Duration: **92.3% ↓**<br>CPU: **91.0% ↓**<br>Reads: **81.1% ↓** |
-| Final Optimization      | 228           | 118      | 15,693        | Duration: **99.94% ↓**<br>CPU: **99.96% ↓**<br>Reads: **99.98% ↓** |
+| Metric                  | Original View | First Optimization | Final Optimization | Improvement First Optimization | Improvement Final Optimization |
+|-------------------------|--------------:|-------------------:|-------------------:|-------------------------------:|-------------------------------:|
+| Duration (ms)           | 382,786       | 29,332             | 228                | **92.3% ↓**                    | **99.94% ↓**                   |
+| CPU (ms)                | 326,704       | 29,265             | 118                | **91.0% ↓**                    | **99.96% ↓**                   |
+| Logical Reads           | 85,883,989    | 16,213,155         | 15,693             | **81.1% ↓**                    | **99.98% ↓**                   |
 
 ---
 
