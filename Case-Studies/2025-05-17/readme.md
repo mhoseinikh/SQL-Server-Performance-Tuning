@@ -114,7 +114,6 @@ FROM (
 ---
 
 ### 7.2 Phase 2 – Injecting Filter via `SESSION_CONTEXT` (Requires App Change)
-**Original vs Phase 1 vs Phase 2**
 
 | Original View (Before) & Phase 1 & Phase 2 |
 |:-----------------------------------:|
@@ -123,7 +122,6 @@ FROM (
 ---
 
 ### 7.3 Compare results
-**Original vs Phase 1 vs Phase 2**
 
 | Original View (Before) & Phase 1 & Phase 2 |
 |:----------------------------------:|
