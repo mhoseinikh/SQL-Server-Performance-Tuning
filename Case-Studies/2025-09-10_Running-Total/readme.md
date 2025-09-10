@@ -52,7 +52,7 @@ SQL-Server-Performance-Tuning/
 ---
 
 ## How to Use
-1. Open the **`scripts/RunningTotal_CaseStudy.sql`** file in SQL Server Management Studio (SSMS).
+1. Open the **`scripts/Scripts_SQL-Server.sql`** file in SQL Server Management Studio (SSMS).
 2. Execute the queries step by step to reproduce the case study results.
 3. Use the **`.sqlplan`** files to compare actual execution plans before and after optimization.
 4. Refer to the screenshots in **images/** for visual results.
@@ -62,7 +62,7 @@ SQL-Server-Performance-Tuning/
 ## Script Content
 
 For convenience, the full SQL script is included here as well.  
-📂 You can also open it directly: [scripts/RunningTotal_CaseStudy.sql](./scripts/Scripts_SQL Server.sql)
+📂 You can also open it directly: [scripts/Scripts_SQL-Server.sql](./scripts/Scripts_SQL-Server.sql)
 
 ```sql
 -- ============================================
@@ -248,7 +248,7 @@ GO
 I welcome your **feedback, alternative approaches, or performance test results** on different datasets.  
 You can also connect with me here:  
 
-- [🌐 Website](https://smhoseini.ir)  
+- [Website](https://smhoseini.ir)  
 - [GitHub Profile](https://github.com/mhoseinikh)  
 - [LinkedIn](https://www.linkedin.com/in/sm-hoseini/)  
 
