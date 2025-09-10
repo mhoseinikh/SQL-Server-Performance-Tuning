@@ -24,6 +24,7 @@ Six approaches were tested, from basic `JOIN` and `Subquery` methods to more adv
 | ![Execution Plans](./Case-Studies/2025-09-10_Running-Total/images/Profiler-Running-Total.png) |
 
 👉 [View scripts](./Case-Studies/2025-09-10_Running-Total/scripts/Scripts_SQL-Server.sql)
+
 👉 [Read full case study](./Case-Studies/2025-09-10_Running-Total/readme.md)  
 
 ---
@@ -39,4 +40,5 @@ Six approaches were tested, from basic `JOIN` and `Subquery` methods to more adv
 
 ## 📂 Archive
 You can browse all case studies in the repository:  
+
 👉 [Full Case Study Archive](./Case-Studies)
