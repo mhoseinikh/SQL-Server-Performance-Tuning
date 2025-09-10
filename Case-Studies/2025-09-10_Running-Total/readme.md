@@ -240,7 +240,7 @@ SELECT [Date],
     FROM dbo.Population
     ORDER BY [Date];
 GO
-
+```
 ---
 
 ## Feedback & Contributions
