@@ -51,21 +51,6 @@ SQL-Server-Performance-Tuning/
 
 ---
 
-## Feedback & Contributions
-
-I welcome your **feedback, alternative approaches, or performance test results** on different datasets.  
-You can also connect with me here:  
-
-- [🌐 Website](https://smhoseini.ir)  
-- [GitHub Profile](https://github.com/mhoseinikh)  
-- [LinkedIn](https://www.linkedin.com/in/sm-hoseini/)  
-
----
-
-⭐ If you find this case study helpful, consider starring the repository!
-
----
-
 ## How to Use
 1. Open the **`scripts/RunningTotal_CaseStudy.sql`** file in SQL Server Management Studio (SSMS).
 2. Execute the queries step by step to reproduce the case study results.
@@ -255,3 +240,18 @@ SELECT [Date],
     FROM dbo.Population
     ORDER BY [Date];
 GO
+
+---
+
+## Feedback & Contributions
+
+I welcome your **feedback, alternative approaches, or performance test results** on different datasets.  
+You can also connect with me here:  
+
+- [🌐 Website](https://smhoseini.ir)  
+- [GitHub Profile](https://github.com/mhoseinikh)  
+- [LinkedIn](https://www.linkedin.com/in/sm-hoseini/)  
+
+---
+
+⭐ If you find this case study helpful, consider starring the repository!
