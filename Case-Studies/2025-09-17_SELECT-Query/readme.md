@@ -51,7 +51,8 @@ The original query (`SELECT-Query_OLD.sql`) contained:
 
 📑 Execution plan:  
 - `sqlplan/SELECT-Query_OLD-Execution-Plan.sqlplan`
-[sqlplan/SELECT-Query_OLD-Execution-Plan.sqlplan](./sqlplan/SELECT-Query_OLD-Execution-Plan.sqlplan)
+
+- [sqlplan/SELECT-Query_OLD-Execution-Plan.sqlplan](./sqlplan/SELECT-Query_OLD-Execution-Plan.sqlplan)
 
 ---
 
