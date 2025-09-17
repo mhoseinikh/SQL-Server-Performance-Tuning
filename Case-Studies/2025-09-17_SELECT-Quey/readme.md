@@ -12,10 +12,10 @@ The study evaluates multiple approaches for calculating running totals in SQL Se
 
 SQL-Server-Performance-Tuning/
 └── Case-Studies/
-└── 2025-09-10_Running-Total/
-├── images/ # Query execution screenshots & visuals
-├── scripts/ # SQL script with all queries
-└── sqlplan/ # SQL Server execution plan files
+    └── 2025-09-10_Running-Total/
+        ├── images/ # Query execution screenshots & visuals
+        ├── scripts/ # SQL script with all queries
+        └── sqlplan/ # SQL Server execution plan files
 
 ---
 
