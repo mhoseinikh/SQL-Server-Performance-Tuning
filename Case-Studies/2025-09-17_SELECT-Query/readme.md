@@ -20,15 +20,14 @@ SQL-Server-Performance-Tuning/
 ## 📁 Folders
 
 - **images/** → Contains profiler screenshots and table statistics for execution comparison.  
-- **scripts/** → Includes the original [SELECT-Query_OLD.sql](./scripts/SELECT-Query_OLD.sql) 
-and optimized [SELECT-Query_NEW.sql](./scripts/SELECT-Query_NEW.sql) query scripts.  
+- **scripts/** → Includes the original [SELECT-Query_OLD.sql](./scripts/SELECT-Query_OLD.sql) and optimized [SELECT-Query_NEW.sql](./scripts/SELECT-Query_NEW.sql) query scripts.  
 - **sqlplan/** → Execution plan files (`.sqlplan`) showing before and after optimization.  
 
 ---
 
 ## 📊 Initial Problem
 
-The original query (`SELECT-Query_OLD.sql`) contained:
+The original query ([SELECT-Query_OLD.sql](./scripts/SELECT-Query_OLD.sql)) contained:
 - Multiple **nested subqueries**.
 - **UDF calls**.
 - A costly **ROW_NUMBER() + subquery** pattern inside the main SELECT.
@@ -50,8 +49,6 @@ The original query (`SELECT-Query_OLD.sql`) contained:
 ![Before Plan](./images/SELECT-Query_OLD_EXECUTE-2.jpg)
 
 📑 Execution plan:  
-- `sqlplan/SELECT-Query_OLD-Execution-Plan.sqlplan`
-
 - [sqlplan/SELECT-Query_OLD-Execution-Plan.sqlplan](./sqlplan/SELECT-Query_OLD-Execution-Plan.sqlplan)
 
 ---
