@@ -1,6 +1,3 @@
-SELECT * FROM WAS.vDocHeader WHERE DocHeaderID = 3250946
-
-
 SELECT da.AccountingHeadlinesID
      , d.TotalPrice
      , g.GoodsCode

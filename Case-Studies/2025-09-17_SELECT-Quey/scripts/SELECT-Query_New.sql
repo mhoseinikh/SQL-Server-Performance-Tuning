@@ -1,8 +1,3 @@
---Server Name: 192.168.10.12
---Database Name: Was
-USE Was;
-GO
-
 SELECT	da.AccountingHeadlinesID, dh.TotalPrice, g.GoodsCode, g.GoodsTitle, doc.AssetCode, doc.AssetCentralCode, did.ItemQty
 		, did.ItemPrice, dh.DocNo, dh.DocDate, (did.ItemQty * did.ItemPrice) AS SumPrice, did.IsManual, did2.DocNo OnDocNo
 		, dh.Title AS dstatus, drV.DocNo docNoAcc, drV.DocDate DocDateAcc, dh.PricingDate, cv.Title AS JunkTitle, di.IsJunk
