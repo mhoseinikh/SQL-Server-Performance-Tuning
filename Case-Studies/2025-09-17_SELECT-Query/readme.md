@@ -139,8 +139,8 @@ Profiler results for the new query:
 
 ## 📎 Files
 
-- **Old query script:** `scripts/SELECT-Query_OLD.sql`  
-- **New query script:** `scripts/SELECT-Query_NEW.sql`  
+- **Old query script:** [SELECT-Query_OLD.sql](./scripts/SELECT-Query_OLD.sql)  
+- **New query script:** [SELECT-Query_NEW.sql](./scripts/SELECT-Query_NEW.sql)  
 - **Execution plans:** `sqlplan/`  
 - **Profiler screenshots:** `images/`  
 
