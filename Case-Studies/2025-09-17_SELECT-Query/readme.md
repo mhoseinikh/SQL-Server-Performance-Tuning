@@ -27,6 +27,14 @@ SQL-Server-Performance-Tuning/
 
 ## 📊 Initial Problem
 
+### Table Sizes
+
+Before analyzing the query performance, it’s important to understand the data volume.  
+The following screenshot shows the row counts for all tables involved in the query:
+
+![Table Sizes](./images/Tables-Spaceused.jpg)
+
+
 The original query ([SELECT-Query_OLD.sql](./scripts/SELECT-Query_OLD.sql)) contained:
 - Multiple **nested subqueries**.
 - **UDF calls**.
