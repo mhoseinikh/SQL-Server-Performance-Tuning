@@ -43,7 +43,9 @@ The original query (`SELECT-Query_OLD.sql`) contained:
 
 📷 See images:  
 - `images/SELECT-Query_OLD_EXECUTE-1.jpg`  
+![Before Plan](./images/SELECT-Query_OLD_EXECUTE-1.jpg)
 - `images/SELECT-Query_OLD_EXECUTE-2.jpg`  
+![Before Plan](./images/SELECT-Query_OLD_EXECUTE-2.jpg)
 
 📑 Execution plan:  
 - `sqlplan/SELECT-Query_OLD-Execution-Plan.sqlplan`
