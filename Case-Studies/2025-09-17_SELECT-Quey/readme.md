@@ -17,6 +17,14 @@ SQL-Server-Performance-Tuning/
 
 ---
 
+## 📁 Folders
+
+- **images/** → Contains profiler screenshots and table statistics for execution comparison.  
+- **scripts/** → Includes the original [scripts/SELECT-Query_OLD.sql](`SELECT-Query_OLD.sql`) and optimized [scripts/SELECT-Query_NEW.sql](`SELECT-Query_NEW.sql`) query scripts.  
+- **sqlplan/** → Execution plan files (`.sqlplan`) showing before and after optimization.  
+
+---
+
 ## 📊 Initial Problem
 
 The original query (`SELECT-Query_OLD.sql`) contained:
