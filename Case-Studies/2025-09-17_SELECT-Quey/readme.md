@@ -20,7 +20,7 @@ SQL-Server-Performance-Tuning/
 ## 📁 Folders
 
 - **images/** → Contains profiler screenshots and table statistics for execution comparison.  
-- **scripts/** → Includes the original [scripts/SELECT-Query_OLD.sql](`SELECT-Query_OLD.sql`) and optimized [aaaaa/bbbbb.sql](./scripts/Scripts_SQL-Server.sql) query scripts.  
+- **scripts/** → Includes the original [SELECT-Query_OLD.sql](./scripts/SELECT-Query_OLD.sql) and optimized [SELECT-Query_NEW.sql](./scripts/SELECT-Query_NEW.sql) query scripts.  
 - **sqlplan/** → Execution plan files (`.sqlplan`) showing before and after optimization.  
 
 ---
