@@ -146,6 +146,21 @@ Profiler results for the new query:
 
 ---
 
+## Feedback & Contributions
+
+I welcome your **feedback, alternative approaches, or performance test results** on different datasets.  
+You can also connect with me here:  
+
+- [Website](https://smhoseini.ir)  
+- [GitHub Profile](https://github.com/mhoseinikh)  
+- [LinkedIn](https://www.linkedin.com/in/sm-hoseini/)  
+
+---
+
+⭐ If you find this case study helpful, consider starring the repository!
+
+---
+
 ## 🏷 Tags
 
 `SQL Server` `Performance Tuning` `Execution Plan` `Query Optimization` `Profiler` `Case Study`
