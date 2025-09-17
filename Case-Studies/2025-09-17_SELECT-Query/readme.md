@@ -83,7 +83,7 @@ This part introduced high **I/O cost**, excessive **reads**, and long execution 
 
 ## 🛠 Optimization Approach
 
-The query was restructured in `SELECT-Query_NEW.sql` with the following changes:
+The query was restructured in [SELECT-Query_NEW.sql](./scripts/SELECT-Query_NEW.sql) with the following changes:
 - Replaced nested subquery with **OUTER APPLY (TOP 1 + ORDER BY)** for more efficient row selection.  
 - Simplified joins and reduced **row materialization**.  
 - Removed unnecessary **scalar UDF calls**.  
@@ -102,12 +102,17 @@ Profiler results for the new query:
 - **Writes:** 0  
 - **Results:** 19 rows  
 
+
 📷 See images:  
 - `images/SELECT-Query_NEW_EXECUTE-1.jpg`  
-- `images/SELECT-Query_NEW_EXECUTE-2.jpg`  
+
+![After Plan](./images/SELECT-Query_NEW_EXECUTE-1.jpg)
+- `images/SELECT-Query_NRE_EXECUTE-2.jpg`  
+
+![After Plan](./images/SELECT-Query_NEW_EXECUTE-2.jpg)
 
 📑 Execution plan:  
-- `sqlplan/SELECT-Query_NEW-Execution-Plan.sqlplan`
+- [sqlplan/SELECT-Query_NEW-Execution-Plan.sqlplan](./sqlplan/SELECT-Query_NEW-Execution-Plan.sqlplan)
 
 ---
 
