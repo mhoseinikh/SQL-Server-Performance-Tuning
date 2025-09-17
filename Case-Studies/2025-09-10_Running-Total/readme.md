@@ -1,10 +1,6 @@
-# SQL Server Performance Tuning – Running Total Case Study
+# SQL Server Performance Tuning – Case Study (2025-09-17)
 
-This repository contains all files related to the case study **"Optimizing Heavy Queries in SQL Server: Running Total"**.  
-The study evaluates multiple approaches for calculating running totals in SQL Server and compares their performance.
-
-📖 Full article with details, explanations, and screenshots is available here:  
-👉 [Optimizing Heavy Queries in SQL Server – Running Total Case Study](https://smhoseini.ir/optimizing-heavy-queries-in-sql-server-running-total-case-study/)
+This case study demonstrates a **real-world SQL Server query optimization** where a slow-performing query was analyzed, tuned, and significantly improved in terms of CPU usage, duration, and logical reads.
 
 ---
 
@@ -12,32 +8,90 @@ The study evaluates multiple approaches for calculating running totals in SQL Se
 
 SQL-Server-Performance-Tuning/
 └── Case-Studies/
-    └── 2025-09-10_Running-Total/
-        ├── images/ # Query execution screenshots & visuals
-        ├── scripts/ # SQL script with all queries
-        └── sqlplan/ # SQL Server execution plan files
+└── 2025-09-17_SELECT-Query/
+├── images/ # Profiler screenshots & table statistics
+├── scripts/ # Original and optimized SQL scripts
+└── sqlplan/ # Execution plans (before & after)
 
 
 ---
 
-### 📂 Folders
+## 📊 Initial Problem
 
-- **`images`** → Contains execution plan screenshots and profiler results.  
-- **`scripts`** → Includes a single SQL script with the implementation of all six methods for calculating running totals.  
-- **`sqlplan`** → Raw SQL Server execution plan files for deeper analysis.  
+The original query (`SELECT-Query_OLD.sql`) contained:
+- Multiple **nested subqueries**.
+- **UDF calls**.
+- A costly **ROW_NUMBER() + subquery** pattern inside the main SELECT.
+- Complex joins across several large tables.
+
+---
+
+### Original Query Performance (Profiler)
+- **CPU:** 313,719  
+- **Duration:** 321,853 ms  
+- **Reads:** 1,786,840  
+- **Writes:** 26  
+- **Results:** 19 rows  
+
+📷 See images:  
+- `images/SELECT-Query_OLD_EXECUTE-1.jpg`  
+- `images/SELECT-Query_OLD_EXECUTE-2.jpg`  
+
+📑 Execution plan:  
+- `sqlplan/SELECT-Query_OLD-Execution-Plan.sqlplan`
 
 ---
 
-## Methods Compared
+## 🔎 Identified Bottleneck
 
-1. **INNER JOIN** – Self-join approach  
-2. **Subquery** – Row-by-row aggregation  
-3. **Update with Variables** – Temporary table and cumulative variables  
-4. **Recursive CTE** – Common Table Expression with recursion  
-5. **Cursor** – Row-by-row cursor-based calculation  
-6. **Window Function (OVER ... ORDER BY)** – Most efficient and optimized by SQL Server engine  
+The main performance issue was the following subquery:
+
+```sql
+SELECT *
+FROM (
+  SELECT ROW_NUMBER() OVER (PARTITION BY di.DocItemID ORDER BY dar.DocArticleRelationID) Rowid,
+         dr.DocHeadTargetID, dha.VoucherID, dha.DocDate, dha.DocNo, da.DebtorType,
+         da.DirectionType, ah.Title AS Certain, p.Title AS Headlines, dha.DocHeaderType,
+         di.DocItemID, da.AccountingHeadlinesID
+  FROM WAS.Voucher AS dha
+       INNER JOIN WAS.DocRelation AS dr ON dr.VoucherID = dha.VoucherID
+       INNER JOIN WAS.DocArticle AS da ON da.VoucherID = dha.VoucherID
+       INNER JOIN WAS.DocArticleRelation AS dar ON dar.DocArticleID = da.DocArticleID
+       INNER JOIN WAS.DocItem AS di ON di.DocItemID = dar.DocItemTargetID
+       INNER JOIN WAS.AccountingHeadlines AS ah ON ah.AccountingHeadlinesID = da.AccountingHeadlinesID
+       LEFT JOIN WAS.AccountingHeadlines p ON p.AccountingHeadlinesID = ah.ParentID
+  WHERE ah.ParentID IN (11)
+    AND dha.ConvertStatus = 0
+) AS f
+WHERE f.Rowid = 1;
+```
+
+This part introduced high I/O cost, excessive reads, and long execution times.
 
 ---
+
+## 🛠 Optimization Approach
+
+The query was restructured in SELECT-Query_NEW.sql with the following changes:
+
+- Replaced nested subquery with OUTER APPLY (TOP 1 + ORDER BY) for more efficient row selection.
+- Simplified joins and reduced row materialization.
+- Removed unnecessary scalar UDF calls.
+- Used NOLOCK hints where appropriate for reporting workloads.
+- Reduced intermediate dataset size before joining.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Final Results (Summary)
 
